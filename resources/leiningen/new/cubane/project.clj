@@ -76,7 +76,8 @@
                                         "-Ddb.pool.max=3"]
 
                         :injections    [(use 'midje.repl)
-                                        (run)]
+                                        #_(run) ; uncomment this to make your system auto-start in repl.
+                                        ]
 
                         :plugins       [[lein-figwheel "0.5.0-6"]
                                         [lein-doo "0.1.6"]
