@@ -33,20 +33,19 @@
 
   [:ReactBootstrap/Panel nil
    [:form {:className "form-horizontal"}
-    [:ReactBootstrap/Input
-     {:type             "text"
-      :value            local-message
-      :placeholder      "Your message..."
-      :label            ">"
-      :labelClassName   "col-xs-2"
-      :wrapperClassName "col-xs-10"
-      :onChange
-      (h%
-        (set-local-message
-          (-> event
-              .-target
-              .-value)
-          Bus))}]
+    [:ReactBootstrap/FormGroup {:controlId ">"}
+     [:ReactBootstrap/ControlLabel nil ">"]
+     [:ReactBootstrap/FormControl
+      {:type             "text"
+       :value            local-message
+       :placeholder      "Your message..."
+       :onChange
+       (h%
+         (set-local-message
+           (-> event
+               .-target
+               .-value)
+           Bus))}]]
 
     [:ReactBootstrap/Button
      {:bsStyle   "primary"

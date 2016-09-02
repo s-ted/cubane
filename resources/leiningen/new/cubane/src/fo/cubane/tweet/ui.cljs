@@ -43,18 +43,19 @@
 
   [:ReactBootstrap/Panel nil
    [:form {:className "form-horizontal"}
-    [:ReactBootstrap/Input
-     {:type             "text"
-      :value            local-tweet
-      :placeholder      "Your tweet..."
-      :addonBefore      ">"
-      :onChange
-      (h%
-        (set-local-tweet
-          (-> event
-              .-target
-              .-value)
-          Bus))}]
+    [:ReactBootstrap/FormGroup {:controlId ">"}
+     [:ReactBootstrap/ControlLabel nil ">"]
+     [:ReactBootstrap/FormControl
+      {:type             "text"
+       :value            local-tweet
+       :placeholder      "Your tweet..."
+       :onChange
+       (h%
+         (set-local-tweet
+           (-> event
+               .-target
+               .-value)
+           Bus))}]]
 
     [:ReactBootstrap/Button
      {:bsStyle   "primary"
